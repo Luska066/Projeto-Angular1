@@ -1,0 +1,106 @@
+<h2 class="contact__title">Entre em Contato</h2>
+<section class="contact__container" [formGroup]="formContato">
+    <form action="" class="contact-form">
+        <input 
+         type="text"
+         placeholder="digite seu nome:"
+         formControlName="nome"
+         [class.valid]="formContato.controls['nome'].valid "
+         [class.invalid]="formContato.controls['nome'].invalid && (formContato.controls['nome'].touched || formContato.controls['nome'].dirty)"
+         />
+
+        <div 
+        *ngIf="formContato.controls['nome'].invalid && (formContato.controls['nome'].touched || formContato.controls['nome'].dirty)"
+        >
+         <small class="error-message" *ngIf="formContato.controls['nome'].hasError('minLength')">
+            Esse campo precisa de no mínimo 4 Caracteres.
+         </small>
+         <small class="error-message" *ngIf="formContato.controls['nome'].hasError('required')">
+            Esse campo precisa ser preenchido.
+         </small>
+        </div>
+
+
+        <input 
+        type="assunto" 
+        placeholder="digite o assunto"
+        formControlName="assunto"
+         [class.valid]="formContato.controls['assunto'].valid "
+         [class.invalid]="formContato.controls['assunto'].invalid && (formContato.controls['assunto'].touched || formContato.controls['assunto'].dirty)"
+        />
+        <div 
+        *ngIf="formContato.controls['assunto'].invalid && (formContato.controls['assunto'].touched || formContato.controls['assunto'].dirty)"
+        >
+         <small class="error-message" *ngIf="formContato.controls['assunto'].hasError('minLength')">
+            Esse campo precisa de no mínimo 10 Caracteres.
+         </small>
+         <small class="error-message" *ngIf="formContato.controls['assunto'].hasError('required')">
+            Esse campo precisa ser preenchido.
+         </small>
+        </div>
+
+
+
+        <input 
+        type="tel" 
+        placeholder="(00) 0000-0000"
+        formControlName="telefone"
+         [class.valid]="formContato.controls['telefone'].valid  "
+         [class.invalid]="formContato.controls['telefone'].invalid && (formContato.controls['telefone'].touched || formContato.controls['telefone'].dirty)"
+         />
+        <div 
+        *ngIf="formContato.controls['telefone'].invalid && (formContato.controls['telefone'].touched || formContato.controls['telefone'].dirty)"
+        >
+         <small class="error-message" *ngIf="formContato.controls['telefone'].hasError('minLength')">
+            Esse campo precisa de no mínimo 11 Caracteres.
+         </small>
+         <small class="error-message" *ngIf="formContato.controls['telefone'].hasError('required')">
+            Esse campo precisa ser preenchido.
+         </small>
+        </div>
+
+
+
+        <input 
+        type="email" 
+        placeholder="digite o seu e-mail"
+        formControlName="email"
+         [class.valid]="formContato.controls['email'].valid "
+         [class.invalid]="formContato.controls['email'].invalid && (formContato.controls['email'].touched || formContato.controls['email'].dirty)"
+        />
+        <div 
+        *ngIf="formContato.controls['email'].invalid && (formContato.controls['email'].touched || formContato.controls['email'].dirty)"
+        >
+         <small class="error-message" *ngIf="formContato.controls['email'].hasError('email')">
+            Esse campo precisa ser válido
+         </small>
+         <small class="error-message" *ngIf="formContato.controls['email'].hasError('required')">
+            Esse campo precisa ser preenchido.
+         </small>
+        </div>
+
+        <textarea
+         maxlength="300" 
+         rows="4"
+         formControlName="mensagem"
+         [class.valid]="formContato.controls['mensagem'].valid "
+         [class.invalid]="formContato.controls['mensagem'].invalid && (formContato.controls['mensagem'].touched || formContato.controls['mensagem'].dirty)"
+         ></textarea>
+        <div 
+        *ngIf="formContato.controls['mensagem'].invalid && (formContato.controls['mensagem'].touched || formContato.controls['mensagem'].dirty)"
+        >
+         <small class="error-message" *ngIf="formContato.controls['mensagem'].hasError('minLength')">
+            Esse campo precisa de no mínimo 4 Caracteres.
+         </small>
+         <small class="error-message" *ngIf="formContato.controls['mensagem'].hasError('required')">
+            Esse campo precisa ser preenchido.
+         </small>
+        </div>
+
+        <button (click)="enviarFormulario()">Enviar</button>
+    </form>
+    <address>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124422.08435959085!2d-38.507651591247786!3d-12.959682043720841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7161b11428a2575%3A0x15e0c8d405a3c593!2sLogin%20Inform%C3%A1tica%20-%20Loja%20Matriz!5e0!3m2!1spt-BR!2sbr!4v1658987104958!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p>Alameda das Cajazeiras, 560 - Caminho das Árvores, Salvador - BA, 41820-470</p>
+    </address>
+</section>
